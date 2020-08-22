@@ -1,0 +1,54 @@
+
+
+
+
+
+.imgLog {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  float: left;
+  align-content: center;
+}
+
+.logout {
+  align-content: center;
+  font-family:   sans-serif;
+   /*right: -18px;*/
+  /*bottom: -4px;*/
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+  align-content: center;
+}
+
+.button2 {
+  text-decoration: none;
+  float: right;
+  padding-right: 25px;
+  align-content: center;
+  color: white;
+  width: 25px;
+  background-color: transparent;
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+.button2:hover {
+  width: 200px;
+  align-content: center;
+}
+
+.button2:hover .logout{
+  opacity: .9;
+  align-content: center;
+}
+
+.button2 {
+  text-decoration: none;
+  align-content: center;
+}
+

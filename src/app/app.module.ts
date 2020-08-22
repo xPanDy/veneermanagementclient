@@ -22,6 +22,7 @@ import { UpdateItemComponent } from './item/components/update-item/update-item.c
 import { CreatePackComponent } from './pack/components/create-pack/create-pack.component';
 import { PackListComponent } from './pack/components/pack-list/pack-list.component';
 import { NavparComponent } from './navigationbar/navpar/navpar.component';
+import { SecurityComponent } from './security/security/security.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { NavparComponent } from './navigationbar/navpar/navpar.component';
     UpdateItemComponent,
     CreatePackComponent,
     PackListComponent,
-    NavparComponent
+    NavparComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
