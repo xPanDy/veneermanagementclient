@@ -1,0 +1,99 @@
+<div class="container">
+  <h2>Veneer management system user registration</h2>
+  <form #registrationForm="ngForm" (ngSubmit)="registerUser()">
+    <img src="https://image.flaticon.com/icons/svg/1822/1822612.svg" width="50" height="50">
+    <small [class.text-danger]="msg">{{msg}}</small>
+
+    <div class="form-group">
+      <label for="firstName">First name:</label>
+      <input type="text" class="form-control" placeholder="Enter name" id="firstName"
+             name="firstName"
+             [(ngModel)]="user.name" required pattern="[a-zA-Z ]*"
+             #name="ngModel"
+             [class.is-invalid]="name.invalid && name.touched"
+      >
+      <div *ngIf="name.errors && (name.invalid && name.touched)">
+        <small class="text-danger" *ngIf="name.errors.required">First name is required</small>
+        <small class="text-danger" *ngIf="name.errors.pattern">Enter valid name</small>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="lastName">Last name:</label>
+      <input type="text" class="form-control" placeholder="Enter lastname" id="lastName"
+             name="lastName" [(ngModel)]="user.surname" required pattern="[a-zA-Z ]*"
+             #surname="ngModel"
+             [class.is-invalid]="surname.invalid && surname.touched"
+      >
+      <!--      <div *ngIf="lastName.errors && (lastName.invalid && lastName.touched)">-->
+      <small class="text-danger" [class.d-none]="surname.valid || surname.untouched">Last name is required</small>
+      <!--      </div>-->
+    </div>
+
+    <div class="form-group">
+      <label for="code">Card code:</label>
+      <input type="text" class="form-control" placeholder="Enter code" id="code"
+             name="code" [(ngModel)]="user.code" required pattern="[a-zA-Z]*"
+             #code="ngModel"
+             [class.is-invalid]="code.invalid && code.touched"
+      >
+      <div *ngIf="code.errors && (code.valid && code.untouched)">
+        <small class="text-danger" *ngIf="code.errors.required">Code field is required</small>
+      </div>
+    </div>
+
+
+    <!--    <div class="form-group">-->
+    <!--      <label for="password">Password:</label>-->
+    <!--      <input type="password" class="form-control" placeholder="Enter password" id="password"-->
+    <!--             name="password" [(ngModel)]="user.password" required  pattern="[a-zA-Z ]*"-->
+    <!--             #password="ngModel"-->
+    <!--             [class.is-invalid]="password.invalid && password.touched"-->
+    <!--      >-->
+    <!--      <div *ngIf="password.errors && (password.invalid && password.touched)">-->
+    <!--        <small class="text-danger" *ngIf="password.errors.required">Password field is required</small>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd"
+             [(ngModel)]="user.password"
+
+             required #password="ngModel"
+             [class.is-invalid]=" password.invalid && password.touched "
+      >
+      <small class="text-danger"
+             [class.d-none]="password.valid || password.untouched">
+        Password is required field</small>
+<!--      <small class="text-danger"-->
+<!--             [class.d-none]="(password.value == confirmpassword .value) && password.untouched">-->
+<!--         Passwords should be-->
+<!--        equal</small>-->
+    </div>
+
+    <div class="form-group">
+      <label for="pwd">Confirm password</label>
+      <input type="password" class="form-control"
+             placeholder="Enter confirm password"
+             name="cpassword"
+             #confirmpassword = "ngModel" [(ngModel)]="user.confirmpassword" required
+              [class.is-invalid]="confirmpassword.invalid && confirmpassword.touched">
+
+
+      <small class="text-danger"
+             [class.d-none]="(confirmpassword.value == password.value)|| confirmpassword.untouched "> Passwords should be
+        equal</small>
+    </div>
+
+    <button
+      [disabled]="confirmpassword.value != password.value ||  registrationForm.form.invalid"
+
+
+            type="submit" class="btn btn-info">Register</button>
+    <small class="float-right" [routerLink]="['/login']">Existing user? Login here</small>
+
+  </form>
+</div>
+

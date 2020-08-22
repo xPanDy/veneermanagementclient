@@ -1,0 +1,50 @@
+<p>pack-list works!</p>
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Pack List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped  table-hover  "  >
+      <thead>
+      <tr  >
+        <th>Id</th>
+        <th>Pack created</th>
+        <th>Quantity</th>
+        <th>Volume</th>
+        <th>User</th>
+        <th>Item id</th>
+        <th>Item name</th>
+        <th>Machine</th>
+        <th>Is active</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pack of packs "   >
+        <td >{{pack.id }}</td>
+        <td>{{pack.created}}</td>
+        <td>{{pack.quantity}}</td>
+        <td>{{pack.volume}}</td>
+        <td>{{pack.user.id}}</td>
+        <td>{{pack.item.id}}</td>
+        <td>{{pack.item.name}}</td>
+        <td>{{pack.machine.name}}</td>
+        <td >{{pack.fs_p_is_active}}</td>
+
+        <td>
+<!--          todo:   functionality on component for pack edit  (click)="editPack(pack.id)"-->
+<!--          todo:   functionality for printing a pack label and passport  -->
+          <button
+            class="btn btn-info" >Edit</button>
+          <button (click)="deletePack(pack.id)" class="btn btn-danger">Delete</button>
+          <button (click)="print(pack.id)" class="btn btn-success">Print</button>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

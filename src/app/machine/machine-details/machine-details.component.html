@@ -1,0 +1,19 @@
+<script src="machine-details.component.ts"></script><p>machine-details works!</p>
+<h2>machine Details</h2>
+
+<hr/>
+<div *ngIf="machine">
+  <div>
+    <label><b>Id: </b></label> {{machine.id}}
+  </div>
+  <div>
+    <label><b>Name: </b></label> {{machine.name}}
+  </div>
+  <div>
+    <label><b>Item Id: </b></label> {{machine.item_id}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to machine List</button><br>

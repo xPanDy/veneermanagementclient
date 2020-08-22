@@ -1,0 +1,31 @@
+<p>item-detals works!</p>
+<h2>Item Details</h2>
+
+<hr/>
+<div *ngIf="item">
+  <div>
+    <label><b>Id: </b></label> {{item.id}}
+  </div>
+  <div>
+    <label><b>Name: </b></label> {{item.name}}
+  </div>
+  <div>
+    <label><b>Class: </b></label> {{item.item_class}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{item.descr}}
+  </div>
+  <div>
+    <label><b>Item height: </b></label> {{item.height}}
+  </div>
+  <div>
+    <label><b>Item length: </b></label> {{item.length}}
+  </div>
+  <div>
+    <label><b>Item width: </b></label> {{item.width}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="listItems()" class="btn btn-primary">Back to machine List</button><br>

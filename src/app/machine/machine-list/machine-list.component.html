@@ -1,0 +1,31 @@
+
+
+<p>To create a pack, click on the machine or on register packs button</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Machine List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped"  class="table table-hover">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Item id</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let mach of machines "  >
+       <td (click)=goToLink(mach)>{{mach.id}}</td>
+        <td (click)=goToLink(mach)>{{mach.name}}</td>
+        <td (click)=goToLink(mach)>{{mach.item_id}}</td>
+        <td><button (click)="deleteMachine(mach.id)" class="btn btn-danger">Delete</button>
+          <button (click)="machineDetails(mach.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          <button (click)="goToLink(mach)" class="btn btn-outline-success" style="margin-left: 10px">Register packs</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
